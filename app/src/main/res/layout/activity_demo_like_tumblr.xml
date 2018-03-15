@@ -4,7 +4,7 @@
     android:id="@+id/root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/colorAccent">
 
 
     <com.rbbn.ems.animator.ClipRevealFrame
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimaryDark"
-        android:visibility="visible">
+        android:visibility="invisible">
 
         <com.ogaclejapan.arclayout.ArcLayout
             android:id="@+id/arc_layout"
@@ -24,6 +24,7 @@
 
         </com.ogaclejapan.arclayout.ArcLayout>
 
+
         <Button
             android:id="@+id/center_item"
             android:layout_width="90dp"
@@ -31,10 +32,24 @@
             android:layout_gravity="center"
             android:background="@drawable/round_button"
             android:drawableTop="@drawable/server_image"
-            android:paddingTop="20dp"
+
             android:text="EMS"
             android:textColor="#fff" />
 
     </com.rbbn.ems.animator.ClipRevealFrame>
+
+    <com.ogaclejapan.arclayout.ArcLayout
+        android:id="@+id/linearc_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:arc_axisRadius="@dimen/layout_child_offset_tumblr"
+        app:arc_origin="center"
+        app:arc_radius="@dimen/layout_radius_tumblr">
+
+
+
+    </com.ogaclejapan.arclayout.ArcLayout>
+
+
 
 </RelativeLayout>

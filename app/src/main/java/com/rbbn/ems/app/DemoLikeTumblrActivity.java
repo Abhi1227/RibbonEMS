@@ -7,6 +7,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,11 +15,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.ViewTreeObserver;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ogaclejapan.arclayout.ArcLayout;
@@ -35,6 +39,7 @@ public class DemoLikeTumblrActivity  extends AppCompatActivity implements View.O
     Toast toast = null;
     ClipRevealFrame menuLayout;
     ArcLayout arcLayout;
+    ArcLayout lineLayout;
     Button centerItem;
     public static final String EXTRA_CIRCULAR_REVEAL_X = "EXTRA_CIRCULAR_REVEAL_X";
     public static final String EXTRA_CIRCULAR_REVEAL_Y = "EXTRA_CIRCULAR_REVEAL_Y";
@@ -62,6 +67,7 @@ public class DemoLikeTumblrActivity  extends AppCompatActivity implements View.O
         rootLayout = findViewById(R.id.root_layout);
         menuLayout = (ClipRevealFrame) findViewById(R.id.menu_layout);
         arcLayout = (ArcLayout) findViewById(R.id.arc_layout);
+        lineLayout = (ArcLayout) findViewById(R.id.linearc_layout);
 //        nodeList = Arrays.asList(getResources().getStringArray(R.array.node_list));
         centerItem = (Button) findViewById(R.id.center_item);
         final Intent intent = getIntent();
@@ -94,7 +100,11 @@ public class DemoLikeTumblrActivity  extends AppCompatActivity implements View.O
         int size_pixels = (int) (100 * scale + 0.5f);
         int padding_pixels = (int) (20 * scale + 0.5f);
         centerItem.setText(emsIp);
+
         for (int i = 0; i < nodeList.size(); i++) {
+//            View view;
+//            LayoutInflater inflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//            view = inflater.inflate(R.layout.node_button, null);
             Button emsbttn = new Button(new ContextThemeWrapper(this, R.style.Item_RoundCircle), null, 0);
             emsbttn.setText(nodeList.get(i));
             emsbttn.setTextSize(getResources().getDimension(R.dimen.item_font_size_wheel));
@@ -108,7 +118,9 @@ public class DemoLikeTumblrActivity  extends AppCompatActivity implements View.O
 //            ViewGroup.LayoutParams params = (ViewGroup.LayoutParams) emsbttn.getLayoutParams();
 //            params.gravity = Gravity.CENTER;
             emsbttn.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.server_image, 0, 0);
-
+//            TextView tv = (TextView)view.findViewById(R.id.textView);
+//            tv.setText(nodeList.get(i));
+//           tv.setTextSize(getResources().getDimension(R.dimen.item_font_size_wheel));
             String btnDrawableName;
             int j = i;
             while (j >= drawables.length) {
@@ -127,10 +139,10 @@ public class DemoLikeTumblrActivity  extends AppCompatActivity implements View.O
 
     @Override
     public void onClick(View v) {
-        if (v instanceof Button) {
-            showToast((Button) v);
-            Intent i = new Intent(DemoLikeTumblrActivity.this, LoginActivity.class);
-            startActivity(i);
+        if (v instanceof Button || v instanceof RelativeLayout) {
+            showToast(v);
+//            Intent i = new Intent(DemoLikeTumblrActivity.this, LoginActivity.class);
+//            startActivity(i);
         }
 
     }
@@ -141,7 +153,7 @@ public class DemoLikeTumblrActivity  extends AppCompatActivity implements View.O
             List<Animator> animList = new ArrayList<>();
             // create the animator for this view (the start radius is zero)
             Animator circularReveal = ViewAnimationUtils.createCircularReveal(rootLayout, x, y, 0, finalRadius);
-            circularReveal.setDuration(400);
+            circularReveal.setDuration(800);
             circularReveal.setInterpolator(new DecelerateInterpolator());
 
             // make the view visible and start the animation
@@ -198,12 +210,19 @@ public class DemoLikeTumblrActivity  extends AppCompatActivity implements View.O
         }
     }
 
-    private void showToast(Button btn) {
+    private void showToast(View v) {
         if (toast != null) {
             toast.cancel();
         }
+        String text=null;
+        if(v instanceof RelativeLayout){
+            TextView tv= v.findViewById(R.id.textView);
+            text = "Clicked: " + tv.getText();
+        } else if(v instanceof Button) {
+            Button b = (Button)v;
+            text = "Clicked: " + b.getText();
+        }
 
-        String text = "Clicked: " + btn.getText();
         toast = Toast.makeText(this, text, Toast.LENGTH_SHORT);
         toast.show();
 
