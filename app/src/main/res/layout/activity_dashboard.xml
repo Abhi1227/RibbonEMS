@@ -39,7 +39,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/dashboard_item_title_margin_top"
                     android:text="Node Management"
                     android:gravity="center"
                     android:textColor="@color/icon_text_color"
@@ -55,7 +55,7 @@
                 android:layout_marginLeft="@dimen/dashboard_item_margin_left"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
-                android:background="@drawable/bg_gradient"
+                android:background="@drawable/bg"
                 android:orientation="vertical"
                 >
 
@@ -71,6 +71,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dashboard_item_title_margin_top"
                     android:text="Fault Management"
                     android:gravity="center"
                     android:textColor="@color/icon_text_color"
@@ -86,7 +87,7 @@
                 android:layout_marginLeft="@dimen/dashboard_item_margin_left"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
-                android:background="@drawable/bg_gradient"
+                android:background="@drawable/bg"
                 android:orientation="vertical"
                 >
 
@@ -102,6 +103,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dashboard_item_title_margin_top"
                     android:text="Diagnostics"
                     android:gravity="center"
                     android:textColor="@color/icon_text_color"
@@ -117,7 +119,7 @@
                 android:layout_marginLeft="@dimen/dashboard_item_margin_left"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
-                android:background="@drawable/bg_gradient"
+                android:background="@drawable/bg"
                 android:orientation="vertical"
                 >
 
@@ -133,6 +135,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dashboard_item_title_margin_top"
                     android:text="Performance Management"
                     android:gravity="center"
                     android:textColor="@color/icon_text_color"
@@ -148,7 +151,7 @@
                 android:layout_marginLeft="@dimen/dashboard_item_margin_left"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
-                android:background="@drawable/bg_gradient"
+                android:background="@drawable/bg"
                 android:orientation="vertical"
                 >
 
@@ -164,6 +167,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dashboard_item_title_margin_top"
                     android:text="Cloud Management"
                     android:gravity="center"
                     android:textColor="@color/icon_text_color"
@@ -179,7 +183,7 @@
                 android:layout_marginLeft="@dimen/dashboard_item_margin_left"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
-                android:background="@drawable/bg_gradient"
+                android:background="@drawable/bg"
                 android:orientation="vertical"
                 >
 
@@ -187,6 +191,7 @@
                     android:id="@+id/settings_cog_icon"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
                     android:text="@string/settings_cog_icon"
                     android:textColor="@color/white"
                     android:textSize="@dimen/icon_size"
@@ -195,6 +200,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dashboard_item_title_margin_top"
                     android:text="Settings"
                     android:gravity="center"
                     android:textColor="@color/icon_text_color"
@@ -210,7 +216,7 @@
                 android:layout_marginLeft="@dimen/dashboard_item_margin_left"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
-                android:background="@drawable/bg_gradient"
+                android:background="@drawable/bg"
                 android:orientation="vertical"
                 >
 
@@ -226,6 +232,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dashboard_item_title_margin_top"
                     android:text="License Management"
                     android:gravity="center"
                     android:textColor="@color/icon_text_color"
@@ -241,7 +248,7 @@
                 android:layout_marginLeft="@dimen/dashboard_item_margin_left"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
-                android:background="@drawable/bg_gradient"
+                android:background="@drawable/bg"
                 android:orientation="vertical"
                 >
 
@@ -257,6 +264,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dashboard_item_title_margin_top"
                     android:text="User And Roles"
                     android:gravity="center"
                     android:textColor="@color/icon_text_color"

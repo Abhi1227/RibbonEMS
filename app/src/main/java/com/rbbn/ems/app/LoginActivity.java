@@ -89,7 +89,9 @@ public class LoginActivity extends AppCompatActivity {
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                attemptLogin();
+//                attemptLogin();
+                Intent i = new Intent(LoginActivity.this, DashboardActivity.class);
+                startActivity(i);
             }
         });
 

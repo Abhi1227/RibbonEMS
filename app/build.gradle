@@ -34,3 +34,6 @@ dependencies {
     compile "com.andkulikov:transitionseverywhere:1.7.9"
     compile 'com.ogaclejapan.arclayout:library:1.1.0@aar'
 }
+
+
+apply plugin: 'com.google.gms.google-services'

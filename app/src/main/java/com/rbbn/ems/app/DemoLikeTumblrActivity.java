@@ -129,7 +129,7 @@ public class DemoLikeTumblrActivity  extends AppCompatActivity implements View.O
     public void onClick(View v) {
         if (v instanceof Button) {
             showToast((Button) v);
-            Intent i = new Intent(DemoLikeTumblrActivity.this, LoginActivity.class);
+            Intent i = new Intent(DemoLikeTumblrActivity.this, DashboardActivity.class);
             startActivity(i);
         }
 

@@ -34,6 +34,8 @@
 
     <color name="alarm_count_text_color">#273e47</color>
 
+    <!--node-page-colors-->
+    <color name="node_item_text_color">#fff</color>
 
     <!--ribbon color shades-->
     <color name="bg_color1">#FF007F</color>

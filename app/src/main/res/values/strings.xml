@@ -75,4 +75,16 @@
 
     </string-array>
 
+
+
+    <!--Node-menu-->
+    <string name="sbc">SBC</string>
+    <string name="insight">Insight</string>
+    <string name="psx">PSX</string>
+    <string name="gsx">GSX</string>
+    <string name="dsc">DSC</string>
+    <string name="sgx">SGX 4000</string>
+    <string name="ads">ADS</string>
+    <string name="asx">ASX</string>
+
 </resources>

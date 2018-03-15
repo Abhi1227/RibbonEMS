@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--<item-->
+        <!--android:id="@+id/discard"-->
+        <!--android:icon="@drawable/ic_discard"-->
+        <!--android:orderInCategory="100"-->
+        <!--android:title="@string/delete"-->
+        <!--app:showAsAction="always"/>-->
+
+    <!--<item-->
+        <!--android:id="@+id/search"-->
+        <!--android:icon="@drawable/ic_search"-->
+        <!--android:orderInCategory="100"-->
+        <!--android:title="@string/search"-->
+        <!--app:showAsAction="always"/>-->
+
+    <item
+        android:id="@+id/sbc"
+        android:orderInCategory="100"
+        android:title="@string/sbc"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/insight"
+        android:orderInCategory="100"
+        android:title="@string/insight"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/psx"
+        android:orderInCategory="100"
+        android:title="@string/psx"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/gsx"
+        android:orderInCategory="100"
+        android:title="@string/gsx"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/dsc"
+        android:orderInCategory="100"
+        android:title="@string/dsc"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/sgx"
+        android:orderInCategory="100"
+        android:title="@string/sgx"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/ads"
+        android:orderInCategory="100"
+        android:title="@string/ads"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/asx"
+        android:orderInCategory="100"
+        android:title="@string/asx"
+        app:showAsAction="never"/>
+
+
+
+</menu>
