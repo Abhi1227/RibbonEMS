@@ -66,7 +66,8 @@ public class PerformNetworkOperations {
                             Toast.makeText(ctx, "Unable to fetch Login Token", Toast.LENGTH_LONG).show();
                         } else {
                             Toast.makeText(ctx, "Successfully Logged In", Toast.LENGTH_LONG).show();
-                            getEmsList(emsIP, token);
+                            getNodesList(emsIP,token);
+//                            getEmsList(emsIP, token);
                             Log.d("Abhishek", token);
                         }
 

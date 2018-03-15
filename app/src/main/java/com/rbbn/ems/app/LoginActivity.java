@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.rbbn.ems.R;
@@ -92,7 +93,8 @@ public class LoginActivity extends AppCompatActivity {
                 attemptLogin();
             }
         });
-
+//        List<String> nodeList = new ArrayList<String>(Arrays.asList((getResources().getStringArray(R.array.node_list))));
+//        navigateActivity(nodeList,"10.54.9.18");
 
     }
 
