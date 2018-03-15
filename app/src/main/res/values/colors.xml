@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1d1f21</color>
+    <color name="colorPrimaryDark">#181A1C</color>
+    <color name="colorAccent">#ff007f</color>
+
+    <color name="overflowMenuBg">#fffcfff6</color>
+
+    <!-- Grey Color Shades -->
+    <color name="grey_25">#FDFDFD</color>
+    <color name="grey_50">#FAFAFA</color>
+    <color name="grey_100">#F5F5F5</color>
+    <color name="grey_200">#EEEEEE</color>
+    <color name="grey_300">#E0E0E0</color>
+    <color name="grey_400">#BDBDBD</color>
+    <color name="grey_500">#9E9E9E</color>
+    <color name="grey_600">#757575</color>
+    <color name="grey_700">#616161</color>
+    <color name="grey_800">#424242</color>
+    <color name="icon_color">#444</color>
+    <color name="icon_text_color">#fff</color>
+    <color name="icon_bg_color">#f90082</color>
+
+    <!--alarm-page-colors-->
+
+    <color name="alarm_description_text_color">#273e47</color>
+    <color name="alarm_heading_text_color">#273e47</color>
+
+    <color name="alarm_critical_bg_color">#d9534f</color>
+    <color name="alarm_major_bg_color">#f0ad4e</color>
+    <color name="alarm_minor_bg_color">#FFF672</color>
+    <color name="alarm_warning_bg_color">#5bc0de</color>
+    <color name="alarm_indeterminate_bg_color">#5cb85c</color>
+
+    <color name="alarm_count_text_color">#273e47</color>
+
+
+    <!--ribbon color shades-->
+    <color name="bg_color1">#FF007F</color>
+    <color name="bg_color2">#E90575</color>
+    <color name="bg_color3">#C0059E</color>
+    <color name="bg_color4">#7E00B9</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000</color>
+    <color name="bg_gradient_start">#31244e</color>
+    <color name="bg_gradient_end">#6b394c</color>
+
+
+    <!--alarm-item-colors-->
+
+    <color name="warning_color_start">#83a4d4</color>
+    <color name="warning_color_end">#b6fbff</color>
+
+    <color name="critical_color_start">#e53935</color>
+    <color name="critical_color_end">#e35d5b</color>
+
+    <color name="major_color_start">#f46b45</color>
+    <color name="major_color_end">#eea849</color>
+
+    <color name="minor_color_start">#f46b45</color>
+    <color name="minor_color_end">#eea849</color>
+
+    <color name="info_color_start">#76b852</color>
+    <color name="info_color_end">#8dc26f</color>
+
+
+
+    <color name="primary">#3c515c</color>
+    <color name="scrim">#42000000</color>
+    <color name="pressed">#33000000</color>
+
+
+    <color name="light_blue_500">#03A9F4</color>
+    <color name="cyan_500">#00BCD4</color>
+    <color name="teal_500">#009688</color>
+    <color name="green_500">#4CAF50</color>
+    <color name="light_green_500">#8BC34A</color>
+
+
+    <color name="tumblr_primary">#36465D</color>
+    <color name="tumblr_orange">#F2992E</color>
+    <color name="tumblr_green">#56BC8A</color>
+    <color name="tumblr_white">#FFFFFF</color>
+    <color name="tumblr_grey">#748089</color>
+    <color name="tumblr_blue">#4AA8D8</color>
+    <color name="tumblr_red">#D95E40</color>
+
+
+    <color name="path_primary">#E62F17</color>
+    <color name="path_orange">#FF9500</color>
+    <color name="path_blue">#1774E6</color>
+    <color name="path_black">#403B36</color>
+    <color name="path_green">#5FB336</color>
+    <color name="path_purple">#49098A</color>
+
+</resources>

@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/dashboardToolbar"
+        layout="@layout/toolbar" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="false">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/node_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@drawable/bg"
+                android:orientation="vertical"
+                android:elevation="5dp"
+                >
+
+                <TextView
+                    android:id="@+id/node_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/node_icon"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/icon_size"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Node Management"
+                    android:gravity="center"
+                    android:textColor="@color/icon_text_color"
+                    android:textSize="@dimen/icon_text_size"  />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fault_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dashboard_item_margin_bottom"
+                android:layout_marginRight="@dimen/dashboard_item_margin_right"
+                android:layout_marginLeft="@dimen/dashboard_item_margin_left"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@drawable/bg_gradient"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/fm_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fm_icon"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/icon_size"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fault Management"
+                    android:gravity="center"
+                    android:textColor="@color/icon_text_color"
+                    android:textSize="@dimen/icon_text_size"  />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/logging_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dashboard_item_margin_bottom"
+                android:layout_marginRight="@dimen/dashboard_item_margin_right"
+                android:layout_marginLeft="@dimen/dashboard_item_margin_left"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@drawable/bg_gradient"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/logging_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/logging_icon"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/icon_size"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Diagnostics"
+                    android:gravity="center"
+                    android:textColor="@color/icon_text_color"
+                    android:textSize="@dimen/icon_text_size"  />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pm_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dashboard_item_margin_bottom"
+                android:layout_marginRight="@dimen/dashboard_item_margin_right"
+                android:layout_marginLeft="@dimen/dashboard_item_margin_left"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@drawable/bg_gradient"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/performance_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/performance_icon"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/icon_size"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Performance Management"
+                    android:gravity="center"
+                    android:textColor="@color/icon_text_color"
+                    android:textSize="@dimen/icon_text_size"  />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cloud_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dashboard_item_margin_bottom"
+                android:layout_marginRight="@dimen/dashboard_item_margin_right"
+                android:layout_marginLeft="@dimen/dashboard_item_margin_left"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@drawable/bg_gradient"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/cloud_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cloud_icon"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/icon_size"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cloud Management"
+                    android:gravity="center"
+                    android:textColor="@color/icon_text_color"
+                    android:textSize="@dimen/icon_text_size"  />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/setting_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dashboard_item_margin_bottom"
+                android:layout_marginRight="@dimen/dashboard_item_margin_right"
+                android:layout_marginLeft="@dimen/dashboard_item_margin_left"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@drawable/bg_gradient"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/settings_cog_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_cog_icon"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/icon_size"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Settings"
+                    android:gravity="center"
+                    android:textColor="@color/icon_text_color"
+                    android:textSize="@dimen/icon_text_size"  />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/license_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dashboard_item_margin_bottom"
+                android:layout_marginRight="@dimen/dashboard_item_margin_right"
+                android:layout_marginLeft="@dimen/dashboard_item_margin_left"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@drawable/bg_gradient"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/license_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/license_icon"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/icon_size"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="License Management"
+                    android:gravity="center"
+                    android:textColor="@color/icon_text_color"
+                    android:textSize="@dimen/icon_text_size"  />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/user_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dashboard_item_margin_bottom"
+                android:layout_marginRight="@dimen/dashboard_item_margin_right"
+                android:layout_marginLeft="@dimen/dashboard_item_margin_left"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@drawable/bg_gradient"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/users_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/users_icon"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/icon_size"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="User And Roles"
+                    android:gravity="center"
+                    android:textColor="@color/icon_text_color"
+                    android:textSize="@dimen/icon_text_size"  />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
+
+</LinearLayout>
