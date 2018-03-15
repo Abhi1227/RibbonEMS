@@ -8,6 +8,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -37,6 +40,7 @@ public class AlarmInfoActivity extends AppCompatActivity {
     ArrayList<Alarms> dataList = new ArrayList<>();
     RecyclerView recyclerView;
     AlarmsRecyclerAdapter adapter;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,9 +48,11 @@ public class AlarmInfoActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.alarmsToolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Alarms");
+        getSupportActionBar().setIcon(R.drawable.ribbon_icon);
+        toolbar.setNavigationIcon(R.drawable.back_arrow);
         mQueue = Volley.newRequestQueue(this);
         recyclerView = (RecyclerView) findViewById(R.id.alarmRecyclerView);
-        adapter = new AlarmsRecyclerAdapter(getApplicationContext(),dataList);
+        adapter = new AlarmsRecyclerAdapter(getApplicationContext(), dataList);
         recyclerView.setAdapter(adapter);
 
         LinearLayoutManager mLinearLayoutManagerVertical = new LinearLayoutManager(getApplicationContext()); // (Context context, int spanCount)
@@ -67,10 +73,10 @@ public class AlarmInfoActivity extends AppCompatActivity {
                 try {
                     JSONArray jsonArray = response.getJSONArray("alarms");
 
-                    for(int i =0 ; i<jsonArray.length(); i++){
+                    for (int i = 0; i < jsonArray.length(); i++) {
                         Alarms alarmObject = new Alarms();
                         JSONObject alarm = jsonArray.getJSONObject(i);
-                        alarmObject.setEventName(alarm.getString("eventName"));
+                        alarmObject.setEventName(alarm.getString("Id"));
                         alarmObject.setType(alarm.getString("type"));
                         alarmObject.setDevice(alarm.getString("device"));
                         alarmObject.setEventSeverity(alarm.getString("eventSeverity"));
@@ -78,7 +84,7 @@ public class AlarmInfoActivity extends AppCompatActivity {
                         alarmObject.setSummary(alarm.getString("summary"));
                         dataList.add(alarmObject);
 
-                        Log.i("Navin","dataList = " + dataList.size());
+                        Log.i("Navin", "dataList = " + dataList.size());
                     }
                     adapter.setItem(dataList);
                     adapter.notifyDataSetChanged();
@@ -124,19 +130,27 @@ public class AlarmInfoActivity extends AppCompatActivity {
         final JsonArrayRequest request1 = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
+                try {
+                    for (int j = 0; j < response.length(); j++) {
 
-
-                    for(int j =0 ;j < response.length() ; j++){
-                        try {
-                            JSONObject obj = response.getJSONObject(j);
-                            Log.i("Navin","newResponse = " + obj.getString("Id"));
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                        Alarms alarmObject = new Alarms();
+                        JSONObject alarm = response.getJSONObject(j);
+                        alarmObject.setEventName(alarm.getString("Id"));
+                        alarmObject.setType(alarm.getString("type"));
+                        alarmObject.setDevice(alarm.getString("device"));
+                        alarmObject.setEventSeverity(alarm.getString("eventSeverity"));
+                        alarmObject.setDate(alarm.getString("date"));
+                        alarmObject.setSummary(alarm.getString("summary"));
+                        dataList.add(alarmObject);
 
                     }
                     adapter.setItem(dataList);
                     adapter.notifyDataSetChanged();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                adapter.setItem(dataList);
+                adapter.notifyDataSetChanged();
 
             }
         }, new Response.ErrorListener() {
@@ -146,6 +160,31 @@ public class AlarmInfoActivity extends AppCompatActivity {
             }
         });
         mQueue.add(request1);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.alarm_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        String msg = "";
+
+        switch (item.getItemId()) {
+
+            case R.id.refreshAlarmList:
+                msg = getString(R.string.sbc);
+                break;
+
+
+        }
+
+        Toast.makeText(this, msg + " clicked !", Toast.LENGTH_SHORT).show();
+
+        return super.onOptionsItemSelected(item);
     }
 
 }
