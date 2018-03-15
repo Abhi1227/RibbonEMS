@@ -137,15 +137,15 @@ public class AlarmsRecyclerAdapter extends RecyclerView.Adapter<AlarmsRecyclerAd
             this.summary.setText(current.getSummary());
 //                this.alarmCard.setCardBackgroundColor(Color.parseColor(bgColorsArray[random]));
             switch (current.getEventSeverity()){
-                case "Critical" : this.alarmCard.setBackground(ContextCompat.getDrawable(context,R.drawable.critical_bg));
+                case "5" : this.alarmCard.setBackground(ContextCompat.getDrawable(context,R.drawable.critical_bg));
                 break;
-                case "Major" : this.alarmCard.setBackground(ContextCompat.getDrawable(context,R.drawable.major_bg));
+                case "4" : this.alarmCard.setBackground(ContextCompat.getDrawable(context,R.drawable.major_bg));
                     break;
-                case "Minor" : this.alarmCard.setBackground(ContextCompat.getDrawable(context,R.drawable.minor_bg));
+                case "3" : this.alarmCard.setBackground(ContextCompat.getDrawable(context,R.drawable.minor_bg));
                     break;
-                case "Warning" : this.alarmCard.setBackground(ContextCompat.getDrawable(context,R.drawable.warning_bg));
+                case "2" : this.alarmCard.setBackground(ContextCompat.getDrawable(context,R.drawable.warning_bg));
                     break;
-                case "Info" : this.alarmCard.setBackground(ContextCompat.getDrawable(context,R.drawable.info_bg));
+                case "1" : this.alarmCard.setBackground(ContextCompat.getDrawable(context,R.drawable.info_bg));
                     break;
             }
             this.position = position;

@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/alarm_critical_bg_color"
+            android:background="@drawable/critical_bg"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="13"
-                android:textColor="@color/alarm_count_text_color"
+                android:textColor="@color/white"
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:text="Critical"
-                android:textColor="@color/alarm_count_text_color"
+                android:textColor="@color/white"
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>

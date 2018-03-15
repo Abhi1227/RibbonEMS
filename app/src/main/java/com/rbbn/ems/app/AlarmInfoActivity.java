@@ -60,8 +60,8 @@ public class AlarmInfoActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(mLinearLayoutManagerVertical);
 
         recyclerView.setItemAnimator(new DefaultItemAnimator()); // Even if we dont use it then also our items shows default animation. #Check Docs
-        jsonParse();
-//        jsonParse1();
+//        jsonParse();
+        jsonParse1();
     }
 
     private void jsonParse() {
@@ -131,16 +131,17 @@ public class AlarmInfoActivity extends AppCompatActivity {
             @Override
             public void onResponse(JSONArray response) {
                 try {
+                    dataList.clear();
                     for (int j = 0; j < response.length(); j++) {
 
                         Alarms alarmObject = new Alarms();
                         JSONObject alarm = response.getJSONObject(j);
                         alarmObject.setEventName(alarm.getString("Id"));
-                        alarmObject.setType(alarm.getString("type"));
-                        alarmObject.setDevice(alarm.getString("device"));
-                        alarmObject.setEventSeverity(alarm.getString("eventSeverity"));
-                        alarmObject.setDate(alarm.getString("date"));
-                        alarmObject.setSummary(alarm.getString("summary"));
+                        alarmObject.setType(alarm.getString("Type"));
+                        alarmObject.setDevice(alarm.getString("Node"));
+                        alarmObject.setEventSeverity(alarm.getString("Sev"));
+                        alarmObject.setDate(alarm.getString("time"));
+                        alarmObject.setSummary(alarm.getString("Sum"));
                         dataList.add(alarmObject);
 
                     }
@@ -176,7 +177,7 @@ public class AlarmInfoActivity extends AppCompatActivity {
         switch (item.getItemId()) {
 
             case R.id.refreshAlarmList:
-                msg = getString(R.string.sbc);
+                jsonParse1();
                 break;
 
 
