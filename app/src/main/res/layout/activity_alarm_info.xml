@@ -28,6 +28,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/criticalCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -50,11 +51,12 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/alarm_major_bg_color"
+            android:background="@drawable/major_bg"
             android:gravity="center"
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/majorCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="13"
@@ -75,11 +77,12 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/alarm_minor_bg_color"
+            android:background="@drawable/minor_bg"
             android:gravity="center"
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/minorCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="13"
@@ -100,11 +103,12 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/alarm_warning_bg_color"
+            android:background="@drawable/warning_bg"
             android:gravity="center"
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/warningCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="13"
@@ -124,11 +128,12 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@color/alarm_indeterminate_bg_color"
+            android:background="@drawable/info_bg"
             android:gravity="center"
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/infoCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="13"

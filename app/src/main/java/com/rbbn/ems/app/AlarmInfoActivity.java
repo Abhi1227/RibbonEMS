@@ -2,6 +2,7 @@ package com.rbbn.ems.app;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -40,6 +42,8 @@ public class AlarmInfoActivity extends AppCompatActivity {
     ArrayList<Alarms> dataList = new ArrayList<>();
     RecyclerView recyclerView;
     AlarmsRecyclerAdapter adapter;
+    TextView criticalCountTxtView, majorCountTxtView, minorCountTxtView, warningCountTxtView, infoCountTxtView;
+    int criticalCount = 0, majorCount =0, minorCount = 0, warningCount = 0, infoCount = 0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,10 +54,16 @@ public class AlarmInfoActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Alarms");
         getSupportActionBar().setIcon(R.drawable.ribbon_icon);
         toolbar.setNavigationIcon(R.drawable.back_arrow);
+
         mQueue = Volley.newRequestQueue(this);
         recyclerView = (RecyclerView) findViewById(R.id.alarmRecyclerView);
         adapter = new AlarmsRecyclerAdapter(getApplicationContext(), dataList);
         recyclerView.setAdapter(adapter);
+        criticalCountTxtView = (TextView) findViewById(R.id.criticalCount);
+        majorCountTxtView = (TextView) findViewById(R.id.majorCount);
+        minorCountTxtView = (TextView) findViewById(R.id.minorCount);
+        warningCountTxtView = (TextView) findViewById(R.id.warningCount);
+        infoCountTxtView = (TextView) findViewById(R.id.infoCount);
 
         LinearLayoutManager mLinearLayoutManagerVertical = new LinearLayoutManager(getApplicationContext()); // (Context context, int spanCount)
         mLinearLayoutManagerVertical.setOrientation(LinearLayoutManager.VERTICAL);
@@ -62,67 +72,10 @@ public class AlarmInfoActivity extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator()); // Even if we dont use it then also our items shows default animation. #Check Docs
 //        jsonParse();
         jsonParse1();
+
     }
 
-    private void jsonParse() {
-        String url = "https://api.myjson.com/bins/iiqat";
-//        final ArrayList<Alarms> dataList = new ArrayList<>();
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    JSONArray jsonArray = response.getJSONArray("alarms");
 
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        Alarms alarmObject = new Alarms();
-                        JSONObject alarm = jsonArray.getJSONObject(i);
-                        alarmObject.setEventName(alarm.getString("Id"));
-                        alarmObject.setType(alarm.getString("type"));
-                        alarmObject.setDevice(alarm.getString("device"));
-                        alarmObject.setEventSeverity(alarm.getString("eventSeverity"));
-                        alarmObject.setDate(alarm.getString("date"));
-                        alarmObject.setSummary(alarm.getString("summary"));
-                        dataList.add(alarmObject);
-
-                        Log.i("Navin", "dataList = " + dataList.size());
-                    }
-                    adapter.setItem(dataList);
-                    adapter.notifyDataSetChanged();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-            }
-        });
-        mQueue.add(request);
-    }
-
-//    public static ArrayList<Alarms> getData() {
-//
-//        ArrayList<Alarms> dataList = new ArrayList<>();
-//
-//        for (int i = 0; i < 20; i++) {
-//
-//            Alarms alarms = new Alarms();
-//            alarms.setEventName("sonusCpEventLogFileDebugLevelInfoNotification " + i);
-//            alarms.setType("Insight" + i);
-//            alarms.setDevice("localhost " + i);
-//            if (i < 5) {
-//                alarms.setEventSeverity("Critical");
-//            } else {
-//                alarms.setEventSeverity("Major");
-//            }
-//
-//
-//            dataList.add(alarms);
-//        }
-//
-//        return dataList;
-//    }
 
     private void jsonParse1() {
         String url = "http://10.54.9.18:8999/mobileems/alarmlist";
@@ -132,6 +85,11 @@ public class AlarmInfoActivity extends AppCompatActivity {
             public void onResponse(JSONArray response) {
                 try {
                     dataList.clear();
+                    criticalCount = 0;
+                    majorCount = 0;
+                    minorCount = 0;
+                    warningCount = 0;
+                    infoCount = 0;
                     for (int j = 0; j < response.length(); j++) {
 
                         Alarms alarmObject = new Alarms();
@@ -140,9 +98,28 @@ public class AlarmInfoActivity extends AppCompatActivity {
                         alarmObject.setType(alarm.getString("Type"));
                         alarmObject.setDevice(alarm.getString("Node"));
                         alarmObject.setEventSeverity(alarm.getString("Sev"));
+                        switch (alarmObject.getEventSeverity()){
+                            case "5" : criticalCount++;
+                                break;
+                            case "4" : majorCount++;
+                                break;
+                            case "3" : minorCount++;
+                                break;
+                            case "2" :warningCount++;
+                                break;
+                            case "1" :infoCount++;
+                                break;
+                            default:
+                                break;
+                        }
                         alarmObject.setDate(alarm.getString("time"));
                         alarmObject.setSummary(alarm.getString("Sum"));
                         dataList.add(alarmObject);
+                        criticalCountTxtView.setText(criticalCount+"");
+                        majorCountTxtView.setText(majorCount+"");
+                        minorCountTxtView.setText(minorCount+"");
+                        warningCountTxtView.setText(warningCount+"");
+                        infoCountTxtView.setText(infoCount+"");
 
                     }
                     adapter.setItem(dataList);
@@ -178,6 +155,7 @@ public class AlarmInfoActivity extends AppCompatActivity {
 
             case R.id.refreshAlarmList:
                 jsonParse1();
+
                 break;
 
 
