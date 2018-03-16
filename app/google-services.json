@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "2125179900",
+    "firebase_url": "https://ribbonems.firebaseio.com",
+    "project_id": "ribbonems",
+    "storage_bucket": "ribbonems.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2125179900:android:ec4daee71d7065bf",
+        "android_client_info": {
+          "package_name": "com.rbbn.ems"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "2125179900-ipnui11dupc0ariflbfhprbftmqhv7si.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rbbn.ems",
+            "certificate_hash": "e2af632f76e78d26c3e141c1a722c474233c8910"
+          }
+        },
+        {
+          "client_id": "2125179900-2crf77gn5ctnrfpka75pl5rnr8l5gcdc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjuDSfjAEJGBCduh4uPKGrYchKNxPiMuA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "2125179900-2crf77gn5ctnrfpka75pl5rnr8l5gcdc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/node_speech"
+        android:orderInCategory="100"
+        android:title="@string/tap_on_mic"
+        app:showAsAction="always"
+        android:icon="@drawable/ico_mic"/>
+    <item
+        android:id="@+id/settings"
+        android:orderInCategory="100"
+        android:title="Settings"
+        app:showAsAction="never"/>
+</menu>

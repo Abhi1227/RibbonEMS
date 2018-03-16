@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/nodeCardView"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardBackgroundColor="@color/white">
+
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/node_card_bg_color">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="16dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nodeNameTextView"
+                android:textSize="16sp"
+
+                android:textStyle="bold"
+                android:textColor="@color/node_item_text_color"
+                android:text="localhost"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/node_item_text_size"
+                android:textStyle="bold"
+                android:textColor="@color/node_item_text_color"
+                android:text="Type :"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/node_item_text_size"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/node_item_text_color"
+                android:id="@+id/nodeTypeTextView"
+                android:text="localhost"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/node_item_text_size"
+                android:layout_marginLeft="50dp"
+                android:textColor="@color/node_item_text_color"
+                android:textStyle="bold"
+                android:text="IpAddress :"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/node_item_text_size"
+                android:id="@+id/nodeIpTextView"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/node_item_text_color"
+                android:text="Insight"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/node_item_text_size"
+                android:textStyle="bold"
+                android:textColor="@color/node_item_text_color"
+                android:text="Version :"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/node_item_text_size"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/node_item_text_color"
+                android:id="@+id/nodeVersionTextView"
+                android:text="localhost"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/node_item_text_size"
+                android:layout_marginLeft="50dp"
+                android:textColor="@color/node_item_text_color"
+                android:textStyle="bold"
+                android:text="Status :"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/node_item_text_size"
+                android:id="@+id/nodeStatusTextView"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/node_item_text_color"
+                android:text="Insight"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
+
+
+</android.support.v7.widget.CardView>
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/network_bg">
+
+    <include
+        android:id="@+id/networkToolbar"
+        layout="@layout/toolbar" />
+    <com.rbbn.ems.animator.ClipRevealFrame
+        android:id="@+id/menu_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/network_bg"
+        android:visibility="invisible">
+
+        <com.ogaclejapan.arclayout.ArcLayout
+            android:id="@+id/arc_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:arc_axisRadius="@dimen/layout_child_offset_tumblr"
+            app:arc_origin="center"
+            app:arc_radius="@dimen/layout_radius_tumblr">
+
+        </com.ogaclejapan.arclayout.ArcLayout>
+
+        <Button
+            android:id="@+id/center_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/round_button"
+            android:drawableTop="@drawable/server_image"
+            android:textSize="14sp"
+            android:text="EMS"
+            android:textColor="#fff" />
+
+    </com.rbbn.ems.animator.ClipRevealFrame>
+
+</RelativeLayout>

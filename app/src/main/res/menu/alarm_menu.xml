@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+
+    <item
+        android:id="@+id/node_speech"
+        android:orderInCategory="100"
+        android:title="@string/tap_on_mic"
+        app:showAsAction="always"
+        android:icon="@drawable/ico_mic"/>
+    <item
+        android:id="@+id/refreshAlarmList"
+        android:icon="@drawable/refresh_icon"
+        android:orderInCategory="100"
+        android:title="@string/delete"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/critical"
+        android:orderInCategory="100"
+        android:title="Critical"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/major"
+        android:orderInCategory="100"
+        android:title="Major"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/minor"
+        android:orderInCategory="100"
+        android:title="Major"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/warning"
+        android:orderInCategory="100"
+        android:title="Major"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/info"
+        android:orderInCategory="100"
+        android:title="Indeterminate"
+        app:showAsAction="never"/>
+
+
+
+
+
+</menu>
